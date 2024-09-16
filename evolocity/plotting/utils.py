@@ -534,6 +534,9 @@ def set_legend(
     if legend_fontoutline is None:
         legend_fontoutline = 1
     obs_vals = adata.obs[value_to_plot]
+    print(value_to_plot)
+    print(obs_vals)
+    print(obs_vals.cat)
     obs_vals.cat.categories = obs_vals.cat.categories.astype(str)
     color_keys = adata.uns[f"{value_to_plot}_colors"]
     if isinstance(color_keys, dict):
