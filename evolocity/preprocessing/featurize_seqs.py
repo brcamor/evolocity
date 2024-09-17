@@ -8,7 +8,14 @@ import numpy as np
 import os
 
 def get_model(model_name):
-    if model_name == 'esm1':
+
+    if model_name == 'esm2':
+        from ..tools.fb_model import FBModel
+        model = FBModel(
+            'esm2_t36_3B_UR50D',
+            repr_layer=[-1],
+        )
+    elif model_name == 'esm1':
         from ..tools.fb_model import FBModel
         model = FBModel(
             'esm1_t34_670M_UR50S',
